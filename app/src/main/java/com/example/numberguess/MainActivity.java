@@ -5,27 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Process;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-
 public class MainActivity extends AppCompatActivity {
 
 
     public static final String EXTRA_MESSAGE = "com.example.numberguess.MESSAGE";
-    public static final String GUESSES       = "com.example.numberguess.GUESSES";
-    public static final String PLAYS         = "com.example.numberguess.PLAYS";
     public static final String TAG           = "NUMGUESS.Main";
 
 
@@ -46,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d( TAG, "\tguess = " + Stats.guessTotal + ", games = " + Stats.gamesPlayed );
         TextView valPlays = (TextView) findViewById(R.id.valPlays);
         TextView valGuess = (TextView) findViewById(R.id.valGuesses);
-        valPlays.setText(new Integer(Stats.gamesPlayed).toString());
-        valGuess.setText(new Integer(Stats.guessTotal).toString());
+        valPlays.setText(Integer.valueOf(Stats.gamesPlayed).toString());
+        valGuess.setText(Integer.valueOf(Stats.guessTotal).toString());
 
         Log.d( TAG, "onStart():   END");
     }

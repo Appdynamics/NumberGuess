@@ -156,10 +156,9 @@ public class GuessNumberActivity extends AppCompatActivity {
         Runnable getHTML = new Runnable() {
             @Override
             public void run() {
-                String result;
 
                 try {
-                    result = fetchURL();
+                    String result = fetchURL();
                     theAnswer = Integer.parseInt(result);
                     Log.d( TAG, "\tgetRandomNumber(): rand num = " + theAnswer);
                     Message msg = Message.obtain( mHandler, MSG_GET_RANDOM_NUM, result );
@@ -168,13 +167,11 @@ public class GuessNumberActivity extends AppCompatActivity {
                 catch (NumberFormatException nfe) {
                     Log.e( TAG, nfe.getMessage() );
                     theAnswer = 10; // reset answer to sane default
-                    result = nfe.getMessage();
                 }
                 catch (Exception e) {
                     Log.e( TAG, "\t" + e.getMessage() );
-                    result = e.getMessage();
                     // we failed to get a new random number
-                    Message msg = Message.obtain( mHandler, MSG_FAIL_GET_RAND, result );
+                    Message msg = Message.obtain( mHandler, MSG_FAIL_GET_RAND, e.getMessage() );
                     mHandler.sendMessage( msg );
                 } // end catch
 
