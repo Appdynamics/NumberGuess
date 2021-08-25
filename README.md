@@ -2,7 +2,9 @@
 
 A simple Android game where the user guesses a number between 1 and 20. Use this as an exercise to learn how to instrument an Android application with AppDynamics Mobile Real User Monitoring (MRUM).
 
-This version deliberately has no AppDynamics MRUM instrumentation except for the Constants class, where the AppDynamics key variable is stubbed out. This class is optional, but recommended.
+Play the game by opening a terminal window and launching the Python webserver (`python WebServer.py`) which serves up random numbers as plain text via HTTP. Clean, build, and launch the Android app in an emulator. The default IP address in the `WebServer.py` file and Android app (`GuessNumberActivity`) might need to be changed for your environment.
+
+This version deliberately has no AppDynamics MRUM instrumentation except for the `Constants` class, where the AppDynamics key (`APPD_KEY`) is stubbed out. This class is optional, but recommended.
 
 For more comprehensive information on AppDynamics mobile application instrumentation, see-
 
@@ -109,7 +111,7 @@ Save your changes to this file.
 
 ```
 import com.appdynamics.eumagent.runtime.AgentConfiguration;
- import com.appdynamics.eumagent.runtime.Instrumentation;
+import com.appdynamics.eumagent.runtime.Instrumentation;
 ```
  
 - In the *onCreate()* method, add below the *super()* call the following
