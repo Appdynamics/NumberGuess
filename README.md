@@ -2,9 +2,9 @@
 
 A simple Android game where the user guesses a number between 1 and 20. Use this as an exercise to learn how to instrument an Android application with AppDynamics Mobile Real User Monitoring (MRUM).
 
-Play the game by opening a terminal window and launching the Python webserver (`python WebServer.py`) which serves up random numbers as plain text via HTTP. Clean, build, and launch the Android app in an emulator. The default IP address in the `WebServer.py` file and Android app (`GuessNumberActivity`) might need to be changed for your environment.
+Play the game by opening a terminal window and launching the Python webserver (`python WebServer.py`) which serves up random numbers as plain text via HTTP. Clean, build, and launch the Android app in an emulator. The default IP address in the `WebServer.py` file and Android app (`RAND_NUM_URL` variable in `Constants` class) might need to be changed for your environment.
 
-This version deliberately has no AppDynamics MRUM instrumentation except for the `Constants` class, where the AppDynamics key (`APPD_KEY`) is stubbed out. This class is optional, but recommended.
+This version deliberately has no AppDynamics MRUM instrumentation except for the `Constants` class, where the AppDynamics key (`APPD_KEY`) is assigned a dummy value.
 
 For more comprehensive information on AppDynamics mobile application instrumentation, see-
 
@@ -14,13 +14,13 @@ For more comprehensive information on AppDynamics mobile application instrumenta
 
 You need access to an AppDynamics Controller with MRUM license entitlements and source code access to your Android application. The license key information comes from the Controller and is entered into files in Android Studio.
 
-You need to change five files in your Android project:
+You need to change five files in this Android project:
 
 1. AndroidManifest.xml
 2. **Top-level** build.gradle
 3. **Module** build.gradle
-4. Constants.java (optional, but recommended)
-5. MainActivity.java (or whatever activity class launches your Android app)
+4. Constants.java
+5. MainActivity.java
 
 Synchronize all files, clean your application build, and build the application fresh. The sections below describe in greater detail these milestones.
 

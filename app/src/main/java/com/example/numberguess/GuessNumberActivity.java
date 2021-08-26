@@ -132,7 +132,7 @@ public class GuessNumberActivity extends AppCompatActivity {
 
         Log.d( TAG, "fetchURL(): BEGIN" );
 
-        URL url = new URL( "http://192.168.4.254:8080/" );
+        URL url = new URL(Constants.RAND_NUM_URL);
         HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
         InputStream is = new BufferedInputStream( httpCon.getInputStream() );
         byte[] buf =  new byte[512];
